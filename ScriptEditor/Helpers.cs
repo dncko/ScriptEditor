@@ -13,7 +13,7 @@ namespace ScriptEditor
         // Escape characters that will break the query.
         public static string MySQLEscape(string str)
         {
-            return MySql.Data.MySqlClient.MySqlHelper.EscapeString(str);
+            return MySqlConnector.MySqlHelper.EscapeString(str);
 
             /*
             return Regex.Replace(str, @"[\x00'""\b\n\r\t\cZ\\%_]",

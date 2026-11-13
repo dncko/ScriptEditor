@@ -1,0 +1,4 @@
+ScriptEditor/bin/
+ScriptEditor/obj/
+.vs/
+*.csproj.user

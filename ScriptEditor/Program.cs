@@ -42,6 +42,7 @@ namespace ScriptEditor
         {
             //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetDefaultFont(new System.Drawing.Font("Microsoft Sans Serif", 8.25f));
 
             LoadConfig();
 
@@ -119,39 +120,11 @@ namespace ScriptEditor
 
         static void SetDefaultCulture(CultureInfo culture)
         {
-            Type type = typeof(CultureInfo);
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-            try
-            {
-                type.InvokeMember("s_userDefaultCulture",
-                                    BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
-                                    null,
-                                    culture,
-                                    new object[] { culture });
-
-                type.InvokeMember("s_userDefaultUICulture",
-                                    BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
-                                    null,
-                                    culture,
-                                    new object[] { culture });
-            }
-            catch { }
-
-            try
-            {
-                type.InvokeMember("m_userDefaultCulture",
-                                    BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
-                                    null,
-                                    culture,
-                                    new object[] { culture });
-
-                type.InvokeMember("m_userDefaultUICulture",
-                                    BindingFlags.SetField | BindingFlags.NonPublic | BindingFlags.Static,
-                                    null,
-                                    culture,
-                                    new object[] { culture });
-            }
-            catch { }
+            CultureInfo.CurrentCulture = culture;
+            CultureInfo.CurrentUICulture = culture;
         }
     }
 }

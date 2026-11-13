@@ -11,6 +11,7 @@ namespace ScriptEditor
 {
     public partial class FormMaskCalculator : Form
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public uint ReturnValue { get; set; } // we return the mask in this
         public FormMaskCalculator(uint phasemask)
         {
