@@ -12,6 +12,7 @@ namespace ScriptEditor
 {
     public partial class FormDataFinder : Form
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int ReturnValue { get; set; } // we return the chosen id in this
         protected bool editMode = false;
 

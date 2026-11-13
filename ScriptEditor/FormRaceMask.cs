@@ -11,6 +11,7 @@ namespace ScriptEditor
 {
     public partial class FormRaceMask : Form
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public uint ReturnValue { get; set; } // we return the mask in this
         private bool initializing = true;
         public FormRaceMask(uint racemask)

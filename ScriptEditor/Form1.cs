@@ -251,7 +251,7 @@ namespace ScriptEditor
 
         private void picGitLink_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/brotalnia/ScriptEditor");
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("https://github.com/dncko/ScriptEditor") { UseShellExecute = true });
         }
 
         private void picCastsEditor_MouseEnter(object sender, EventArgs e)

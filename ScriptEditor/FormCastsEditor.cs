@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +13,7 @@ namespace ScriptEditor
 {
     public partial class FormCastsEditor : Form
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public uint ReturnValue { get; set; }
         public HashSet<uint> NewTemplates = new HashSet<uint>();
         public HashSet<uint> DeletedTemplates = new HashSet<uint>();
